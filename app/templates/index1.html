@@ -1,0 +1,82 @@
+{% extends 'bootstrap/base.html' %}
+{% import 'macros.html' as macro %}
+{% block navbar %}
+{% include 'navbar.html'%}
+{% endblock %}
+<!-- Styles block -->
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Sacramento&display=swap" rel="stylesheet">
+{% endblock %}
+<!-- Content block -->
+  {% block content %}
+
+
+    <div class="container">
+        <div class="jumbotron">
+              <p style="color: rgba(100,125,100,0.8);text-align: center;font-family: Florence;font-size: 45px;font-weight: bold">Welcome To The Pitch App !!</p>
+        </div>
+      <div class="row">
+
+        <div class="col-sm-8">
+          <p style="margin-top:50px;font-family: cursive;font-size:18px;">
+            This is the application  that allows users to use that one minute wisely.
+            The users will submit their one minute pitches and other users will vote on them and leave comments to give their feedback on them.</br>
+          </br>
+            The pitches are organized by category. You can have different categories like pickup lines, interview pitch, product pitch, promotion pitch.
+            (You don't have to use these categories, you can come up with your own creative categories) 
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <img src="https://logos.co/1024/royalty-free-clip-art-vector-logo-of-a-baseball-player-pitching-by-patrimonio-6800.jpg"height="300">
+        </div>
+      </div>
+    
+      <div class="row">
+        <h1 style="text-align:center;color: rgba(100,125,100,0.8);margin-top:10px;font-family:Florence;font-size: 35px;font-weight: bold"> Categories</h1>
+      <br>
+    </div>
+
+      <div class="col-sm-3">
+      <a style="font-size:24px;text-transform:uppercase;text-decoration:none;color:black;font-family: 'Times New Roman', Times, serif" data-toggle="tab" href="#Soccer">Soccer</a>
+      <img src="https://www.borgenmagazine.com/wp-content/uploads/2019/05/Neymar.jpeg"class="image-responsive" width="250">
+      </div>
+      <div class="col-sm-3">
+      <a style="font-size:24px;text-transform:uppercase;text-decoration:none;color:black;font-family: 'Times New Roman', Times, serif" data-toggle="tab" href="#Business">Business</a> 
+      <img src="https://smallbiztrends.com/wp-content/uploads/2018/03/shutterstock_705804559.jpg" class="image-responsive" width="250">
+      </div>
+      <div class="col-sm-3">
+      
+      <a style="font-size:24px;text-transform:uppercase;text-decoration:none;color:black;font-family: 'Times New Roman', Times, serif" data-toggle="tab" href="#Health">Health</a>
+      <img src="https://www.mobihealthnews.com/sites/default/files/world%20health.jpg"class="image-responsive" width="250">   
+    </div>
+      <div class="col-sm-3">
+      
+      <a style="font-size:24px;text-transform:uppercase;text-decoration:none;color:black;font-family: 'Times New Roman', Times, serif"data-toggle="tab" href="#Environment">Environment</a>
+      <img src="https://heckmondwike-fb.co.uk/wp-content/uploads/2017/10/environment-1.jpg"class="image-responsive" width="250">   
+    </div>
+       
+    <div style="margin-top:20px">
+    <h1 style="text-align:center;color: rgba(100,125,100,0.8);font-family:Florence;font-size: 35px;font-weight: bold"> List of Pitches</h1>
+    </div> 
+
+    <div class="tab-content">
+        <div id="Soccer" class="container tab-pane active"><br>
+          {{ macro.display(Soccer) }}
+          
+        </div>
+        <div id="Business" class="container tab-pane fade"><br>
+          {{ macro.display(Business) }}
+        </div>
+        <div id="Health" class="container tab-pane fade"><br>
+          {{ macro.display(Health)}}
+        </div>
+        <div id="Environment" class="container tab-pane fade"><br>
+          {{ macro.display(Environment) }}
+        </div>
+    </div> 
+      <div style="margin-top:300px; background-color:rgba(0,0,0,0.8);text-align:center;color:white;height:70px;font-size:18px;padding-top:30px;"><p> &copy;2019 copyright By Emerance </p></div>
+    </div>
+      {% endblock %}
